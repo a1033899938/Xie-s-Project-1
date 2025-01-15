@@ -108,7 +108,7 @@ class FigureWidget(QWidget):
 
     def show_figue(self):
         try:
-            if self.filetype == '.spe':
+            if self.filetype == '.spe' or self.filetype == '.mat':
                 if self.show_flag == 'image':
                     self.show_image(self.data, fig_title=self.fig_title)
                     self.histogramWidget.show_hist()

@@ -1,6 +1,7 @@
 """通过list中的多组数值对list进行排序，在前的数值更优先"""
 import copy
 import re
+from src.ui.general_methods import GeneralMethods
 
 
 def sort_key(filename):
@@ -25,12 +26,16 @@ def sort_files(file_names):
 # 测试代码
 if __name__ == '__main__':
     # 假设你的文件名列表如下
-    file_names = [
-        "hBNonNPs-2#-1-100x0.80NA100P10str150gr10s",
-        "hBNonNPs-10#-2-200x1.00NA200P20str100gr5s",
-        "hBNonNPs-2#-1-100x0.75NA10P10str150gr10s",
-        # 更多文件名...
-    ]
+    # file_names = [
+    #     "hBNonNPs-2#-1-100x0.80NA100P10str150gr10s",
+    #     "hBNonNPs-10#-2-200x1.00NA200P20str100gr5s",
+    #     "hBNonNPs-2#-1-100x0.75NA10P10str150gr10s",
+    #     # 更多文件名...
+    # ]
+    folder_path = r'D:\XmuNetDisk\20241204\motor'
+    extensions = ['.spe']
+
+    file_paths, files, file_names = GeneralMethods.list_files_in_directory(folder_path, extensions)
     # 调用排序函数
     file_names_sorted = sort_files(file_names)
 
